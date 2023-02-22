@@ -18,26 +18,20 @@
     <main
       class="grid grid-cols-3 md:grid-cols-5 grid-rows-5 h-screen border-8 border-amber-700"
     >
-      <section
-        class="col-start-2 md:col-start-3 flex justify-center mt-5"
-        id="newGame"
-      >
+      <section class="col-start-2 md:col-start-3 flex justify-center mt-5">
         <ion-icon
           class="icon w-8 h-8 text-amber-700 cursor-pointer"
           name="add-circle-outline"
+          id="newGame"
         ></ion-icon>
         <h1 class="text-lg md:text-xl lg:text-2xl font-extralight ml-2">
           NEW GAME
         </h1>
       </section>
 
-      <section
-        class="total-one row-start-2 col-start-1 md:col-start-2 text-center"
-      >
+      <section class="row-start-2 col-start-1 md:col-start-2 text-center">
         <h2 class="text-3xl lg:text-5xl font-thin tracking-wide">PLAYER 1</h2>
-        <div class="totalScore1 text-7xl font-thin text-red-600 p-5" id="ts1">
-          0
-        </div>
+        <div class="text-7xl font-thin text-red-600 p-5" id="global_1">0</div>
       </section>
 
       <section id="dice">
@@ -49,57 +43,41 @@
         <div class="face bottom"></div>
       </section>
 
-      <section
-        class="total-two row-start-2 col-start-3 md:col-start-4 text-center"
-      >
+      <section class="row-start-2 col-start-3 md:col-start-4 text-center">
         <h2 class="text-3xl lg:text-5xl font-thin tracking-wide">PLAYER 2</h2>
-        <div class="totalScore2 text-7xl font-thin text-red-600 p-5" id="ts2">
-          0
-        </div>
+        <div class="text-7xl font-thin text-red-600 p-5" id="global_2">0</div>
       </section>
 
       <section
         class="row-start-4 col-start-1 md:col-start-2 col-end-5 flex justify-around items-center"
       >
-        <div
-          class="current-one flex flex-col items-center px-8 py-3 gap-2 bg-red-600"
-        >
+        <div class="flex flex-col items-center px-8 py-3 gap-2 bg-red-600">
           <h3 class="font-extralight">CURRENT</h3>
-          <div
-            class="currentScore1 font-extralight text-4xl text-white"
-            id="cs1"
-          >
-            0
-          </div>
+          <div class="font-extralight text-4xl text-white" id="round_1">0</div>
         </div>
 
-        <div class="command">
-          <div class="continu flex items-center p-5" id="lance">
+        <section>
+          <div class="continu flex items-center p-5">
             <ion-icon
               class="icon w-8 h-8 text-amber-700 cursor-pointer"
               name="refresh-outline"
+              id="roll"
             ></ion-icon>
             <h4 class="text-lg md:text-2xl font-extralight ml-2">ROLL DICE</h4>
           </div>
-          <div class="hold flex items-center p-5" id="recup">
+          <div class="hold flex items-center p-5">
             <ion-icon
               class="icon w-8 h-8 text-amber-700 cursor-pointer"
               name="download-outline"
+              id="hold"
             ></ion-icon>
             <h4 class="text-lg md:text-2xl font-extralight ml-2">HOLD</h4>
           </div>
-        </div>
+        </section>
 
-        <div
-          class="current-two flex flex-col items-center px-8 py-3 gap-2 bg-red-600"
-        >
+        <div class="flex flex-col items-center px-8 py-3 gap-2 bg-red-600">
           <h3 class="font-extralight">CURRENT</h3>
-          <div
-            class="currentScore2 font-extralight text-4xl text-white"
-            id="cs2"
-          >
-            0
-          </div>
+          <div class="font-extralight text-4xl text-white" id="round_2">0</div>
         </div>
       </section>
     </main>
