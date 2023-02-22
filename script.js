@@ -59,6 +59,7 @@ function roll() {
 }
 
 rollDice.addEventListener("click", roll);
+rollDice.addEventListener("click", animDice);
 
 function keepScore() {
   if (currentPlayer === 1) {
@@ -88,4 +89,21 @@ function winGame() {
     alert("Player 2 win the game !!!");
     newGame();
   }
+}
+
+// gestion animation du dé
+
+function animDice() {
+  // Afficher le résultat du dé
+  const dice = document.getElementById("dice");
+  const face = dice.querySelector(".front");
+  face.textContent = value;
+
+  // Ajouter une animation de roulement
+  dice.classList.add("rolling");
+
+  // Supprimer l'animation après 1 seconde
+  setTimeout(function () {
+    dice.classList.remove("rolling");
+  }, 1000);
 }
