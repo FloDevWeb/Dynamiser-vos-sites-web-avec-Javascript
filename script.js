@@ -59,3 +59,33 @@ function roll() {
 }
 
 rollDice.addEventListener("click", roll);
+
+function keepScore() {
+  if (currentPlayer === 1) {
+    totalScore1 += currentScore1;
+    displayGlobal1.innerHTML = totalScore1;
+    currentScore1 = 0;
+    displayRound1.innerHTML = currentScore1;
+    winGame();
+    currentPlayer = 2;
+  } else {
+    totalScore2 += currentScore2;
+    displayGlobal2.innerHTML = totalScore2;
+    currentScore2 = 0;
+    displayRound2.innerHTML = currentScore2;
+    winGame();
+    currentPlayer = 1;
+  }
+}
+
+hold.addEventListener("click", keepScore);
+
+function winGame() {
+  if (totalScore1 > 99) {
+    alert("Player 1 win the game !!!");
+    newGame();
+  } else if (totalScore2 > 99) {
+    alert("Player 2 win the game !!!");
+    newGame();
+  }
+}
