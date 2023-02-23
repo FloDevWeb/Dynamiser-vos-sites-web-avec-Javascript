@@ -6,6 +6,8 @@ const displayRound1 = document.getElementById("round_1");
 const displayRound2 = document.getElementById("round_2");
 const rollDice = document.getElementById("roll");
 const hold = document.getElementById("hold");
+const player1Status = document.getElementById("player1");
+const player2Status = document.getElementById("player2");
 
 //fonction pour obtenir un résultat aléatoire
 function getRandomInt(min, max) {
@@ -30,6 +32,7 @@ function newGame() {
   displayGlobal2.innerHTML = 0;
   displayRound1.innerHTML = 0;
   displayRound2.innerHTML = 0;
+  updatePlayerStatus(1);
 }
 
 newGameBtn.addEventListener("click", newGame);
@@ -50,10 +53,12 @@ function roll() {
       currentScore1 = 0;
       displayRound1.innerHTML = currentScore1;
       currentPlayer = 2;
+      updatePlayerStatus(2);
     } else {
       currentScore2 = 0;
       displayRound2.innerHTML = currentScore2;
       currentPlayer = 1;
+      updatePlayerStatus(1);
     }
   }
 }
@@ -69,6 +74,7 @@ function keepScore() {
     displayRound1.innerHTML = currentScore1;
     winGame();
     currentPlayer = 2;
+    updatePlayerStatus(2);
   } else {
     totalScore2 += currentScore2;
     displayGlobal2.innerHTML = totalScore2;
@@ -76,6 +82,7 @@ function keepScore() {
     displayRound2.innerHTML = currentScore2;
     winGame();
     currentPlayer = 1;
+    updatePlayerStatus(1);
   }
 }
 
@@ -107,3 +114,19 @@ function animDice() {
     dice.classList.remove("rolling");
   }, 1000);
 }
+
+// gestion player actif
+
+// Fonction pour mettre à jour le statut des joueurs
+function updatePlayerStatus(activePlayer) {
+  if (activePlayer === 1) {
+    player2Status.classList.add("invisible");
+    player1Status.classList.remove("invisible");
+  } else {
+    player2Status.classList.remove("invisible");
+    player1Status.classList.add("invisible");
+  }
+}
+
+// Appeler la fonction pour mettre à jour le statut initial
+updatePlayerStatus(1);
