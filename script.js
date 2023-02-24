@@ -8,6 +8,8 @@ const rollDice = document.getElementById("roll");
 const hold = document.getElementById("hold");
 const player1Status = document.getElementById("player1");
 const player2Status = document.getElementById("player2");
+const title1 = document.getElementById("title1");
+const title2 = document.getElementById("title2");
 
 //fonction pour obtenir un résultat aléatoire
 function getRandomInt(min, max) {
@@ -126,9 +128,17 @@ function updatePlayerStatus(activePlayer) {
   if (activePlayer === 1) {
     player2Status.classList.add("invisible");
     player1Status.classList.remove("invisible");
+    title1.classList.remove("font-extralight");
+    title1.classList.add("font-light");
+    title2.classList.remove("font-light");
+    title2.classList.add("font-extralight");
   } else {
     player2Status.classList.remove("invisible");
     player1Status.classList.add("invisible");
+    title1.classList.remove("font-light");
+    title1.classList.add("font-extralight");
+    title2.classList.remove("font-extralight");
+    title2.classList.add("font-light");
   }
 }
 
