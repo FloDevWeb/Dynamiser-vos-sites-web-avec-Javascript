@@ -2,8 +2,8 @@
   margin-top: 25%;
   margin-left: auto;
   margin-right: auto;
-  width: 100px;
-  height: 100px;
+  width: 90px;
+  height: 90px;
   transform-style: preserve-3d;
   animation-duration: 1s;
   animation-timing-function: ease-out;
@@ -15,7 +15,7 @@
   height: 100%;
   border: 2px solid rgb(149, 77, 49);
   text-align: center;
-  font-size: 4em;
+  font-size: 3.5em;
   font-weight: 200;
   background-color: white;
 }

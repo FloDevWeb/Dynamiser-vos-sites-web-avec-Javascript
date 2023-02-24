@@ -22,6 +22,7 @@ let totalScore2 = 0;
 let currentPlayer = 1;
 let value = 0;
 
+// fonction pour tout initialiser en cas de nouvelle partie
 function newGame() {
   currentScore1 = 0;
   totalScore1 = 0;
@@ -37,6 +38,7 @@ function newGame() {
 
 newGameBtn.addEventListener("click", newGame);
 
+// fonction qui gère le calcul quand on lance le dé
 function roll() {
   value = getRandomInt(1, 7);
   console.log(value);
@@ -66,6 +68,7 @@ function roll() {
 rollDice.addEventListener("click", roll);
 rollDice.addEventListener("click", animDice);
 
+// fonction pour mettre le score courant dans le score total
 function keepScore() {
   if (currentPlayer === 1) {
     totalScore1 += currentScore1;
@@ -88,6 +91,7 @@ function keepScore() {
 
 hold.addEventListener("click", keepScore);
 
+// fonction fin de partie
 function winGame() {
   if (totalScore1 > 99) {
     alert("Player 1 win the game !!!");
